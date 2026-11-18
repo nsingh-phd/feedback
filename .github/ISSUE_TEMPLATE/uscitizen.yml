@@ -1,0 +1,51 @@
+name: "US Citizen: report a mistake"
+description: A wrong or outdated answer, a problem with a practice sentence, or something that doesn't work in the US Citizen app.
+title: "[US Citizen] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping make [US Citizen](https://uscitizen.nsingh.phd) better.
+        **This report will be public.** Don't include your name, A-Number, case number, or any details about your immigration case.
+  - type: dropdown
+    id: area
+    attributes:
+      label: What is it about?
+      options:
+        - A civics question or answer
+        - A reading or writing sentence
+        - The mock interview
+        - Something doesn't work or looks wrong
+        - Something else
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Civics test version (if it's a civics question)
+      options:
+        - 2025 test (128 questions)
+        - 2008 test (100 questions)
+        - Not sure / not a civics question
+  - type: input
+    id: question
+    attributes:
+      label: Question number or text
+      placeholder: "e.g. Q47, or the start of the question"
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+      description: What the app shows, and what you think it should say or do.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source (optional)
+      description: A link that shows the correct answer, ideally from uscis.gov.
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser (optional, for things that don't work)
+      placeholder: "e.g. iPhone, Safari"
